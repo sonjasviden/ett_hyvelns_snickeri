@@ -29,10 +29,29 @@
     }
 
     .nav-link {
-      padding-right: 20px;
-      padding-left: 20px;
+      margin: 15px 10px;
       font-family: "Kingred", sans-serif;
       color: #fffacd;
+      position: relative;
+      padding: 4px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #fffacd;
+        transform: scaleX(0);
+        transform-origin: bottom left;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      &:hover::after,
+      &.active::after {
+        transform: scaleX(1);
+      }
     }
   }
 }
@@ -44,11 +63,24 @@
 .navbar-blob {
   position: absolute;
   width: 100%;
-  margin-top: -40px;
+  margin-top: -20px;
   z-index: -1;
   text-align: center;
 
   img {
     width: 660px;
+  }
+}
+
+.navigation {
+  margin-bottom: 5rem;
+  .logo {
+    width: 150px;
+    position: absolute;
+    margin: 10px;
+
+    img {
+      width: 100%;
+    }
   }
 }
