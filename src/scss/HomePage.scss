@@ -1,0 +1,95 @@
+.homepage {
+  .homepage-logo {
+    width: 35%;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-top: 20px;
+    font-family: "Kingred", sans-serif;
+    color: #7a4e4e;
+    font-size: 20px;
+  }
+
+  .mobile-bottoms {
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-bottom: -10px;
+
+    .stool {
+      width: 60%;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .blob {
+      width: 100%;
+      //   margin-bottom: -10px;
+    }
+  }
+
+  .homepage-middle {
+    justify-content: space-between;
+    margin-top: 1rem;
+    display: flex;
+    position: absolute;
+
+    .stool {
+      width: 20%;
+      margin-left: 50px;
+    }
+
+    .chair {
+      width: 18%;
+      margin-right: 50px;
+    }
+  }
+
+  .logo-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .homepage-logo {
+      width: 265px;
+    }
+
+    p {
+      font-size: 25px;
+    }
+  }
+
+  .homepage-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    .yellow {
+      width: 35%;
+      img {
+        width: 100%;
+      }
+    }
+    .orange {
+      width: 20%;
+      img {
+        width: 100%;
+      }
+    }
+    .blue {
+      width: 25%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

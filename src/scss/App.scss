@@ -1,0 +1,13 @@
+@import "bootstrap/scss/bootstrap";
+
+@import "./Navbar.scss";
+@import "./HomePage.scss";
+
+@font-face {
+  font-family: "Kingred";
+  src: url("/fonts/Kingred.otf") format("otf");
+}
+
+body {
+  background-color: #fffacd;
+}
