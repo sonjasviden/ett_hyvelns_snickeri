@@ -2,12 +2,27 @@
 
 @import "./Navbar.scss";
 @import "./HomePage.scss";
+@import "./ContactPage.scss";
 
 @font-face {
   font-family: "Kingred";
-  src: url("/fonts/Kingred.otf") format("otf");
+  src: url("/fonts/Kingred.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Tan Meringue";
+  src: url("/fonts/TanMeringue.otf") format("opentype");
 }
 
 body {
   background-color: #fffacd;
+
+  h1 {
+    font-family: "Tan Meringue";
+    color: #7a4e4e;
+    font-size: 30px;
+    // margin-left: 20px;
+    text-transform: uppercase;
+    margin: 3rem 0 3rem 1.5rem;
+  }
 }

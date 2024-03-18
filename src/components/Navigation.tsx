@@ -16,7 +16,7 @@ const Navigation = () => {
         <Navbar expand="md" className="align-items-center">
           <Navbar.Brand>
             <Image
-              style={{ width: "100px" }}
+              style={{ width: "100px", marginLeft: "15px" }}
               className="logo"
               src="/images/logo.png"
             />

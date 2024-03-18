@@ -1,0 +1,57 @@
+.contactPage {
+  .form {
+    padding: 0 2rem;
+    .form-label {
+      font-family: "Kingred", sans-serif;
+      color: #7a4e4e;
+    }
+
+    .form-control {
+      background-color: #fffbd9;
+      border: #7a4e4e 1px solid;
+      border-radius: 10px;
+    }
+
+    .btn {
+      background-color: #fd7f32;
+      font-family: "Tan Meringue", sans-serif;
+      text-transform: uppercase;
+      padding: 15px 20px 10px 20px;
+      border: none;
+    }
+  }
+
+  .purple-blob {
+    position: relative;
+    width: 100%;
+    margin-top: 2.5rem;
+
+    img {
+      width: 100%;
+    }
+
+    .info-box {
+      position: absolute;
+      bottom: 0;
+
+      .info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;
+        margin-left: 15px;
+        height: 30px;
+
+        img {
+          width: 30px;
+          margin-right: 15px;
+        }
+
+        p {
+          color: #fffacd;
+          font-family: "Kingred", sans-serif;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
