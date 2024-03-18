@@ -16,13 +16,19 @@
 
 body {
   background-color: #fffacd;
+}
 
+h1 {
+  font-family: "Tan Meringue";
+  color: #7a4e4e;
+  font-size: 30px;
+  // margin-left: 20px;
+  text-transform: uppercase;
+  margin: 3rem 0 3rem 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
   h1 {
-    font-family: "Tan Meringue";
-    color: #7a4e4e;
-    font-size: 30px;
-    // margin-left: 20px;
-    text-transform: uppercase;
-    margin: 3rem 0 3rem 1.5rem;
+    margin-top: 9rem;
   }
 }

@@ -34,12 +34,16 @@
       position: absolute;
       bottom: 0;
 
+      .phoneNr {
+        margin-bottom: 20px !important;
+      }
+
       .info {
         display: flex;
         align-items: center;
         margin-bottom: 35px;
         margin-left: 15px;
-        height: 30px;
+        height: 20px;
 
         img {
           width: 30px;
@@ -51,6 +55,158 @@
           font-family: "Kingred", sans-serif;
           margin: 0;
         }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 420px) {
+  .contactPage {
+    .purple-blob {
+      .info-box {
+        .phoneNr {
+          margin-bottom: 35px !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 485px) {
+  .contactPage {
+    .form {
+      .first-last-name,
+      .email-subject {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .purple-blob {
+      img {
+        width: 100%;
+      }
+
+      .info-box {
+        position: absolute;
+        bottom: 0;
+
+        .info {
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 525px) {
+  .contactPage {
+    .form {
+      width: 500px;
+
+      .form-group {
+        width: 200px;
+      }
+    }
+
+    .purple-blob {
+      img {
+        width: 85%;
+      }
+
+      .info-box {
+        .phoneNr {
+          margin-bottom: 35px !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 675px) {
+  .contactPage {
+    .purple-blob {
+      img {
+        width: 70%;
+      }
+
+      .info-box {
+        .phoneNr {
+          margin-bottom: 40px !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .contactPage {
+    margin-left: 3rem;
+    .form {
+      width: 600px;
+
+      .form-group {
+        width: 250px;
+      }
+    }
+
+    .purple-blob {
+      text-align: right;
+      img {
+        width: 65%;
+      }
+
+      .info-box {
+        right: 18px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .contactPage {
+    .form {
+      width: 700px;
+
+      .form-group {
+        width: 300px;
+      }
+    }
+
+    .purple-blob {
+      img {
+        width: 50%;
+      }
+
+      .info-box {
+        .info {
+          margin-bottom: 30px !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .contactPage {
+    .purple-blob {
+      img {
+        width: 40%;
+      }
+
+      .info-box {
+        .info {
+          margin-bottom: 30px !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .contactPage {
+    .purple-blob {
+      img {
+        width: 35%;
       }
     }
   }

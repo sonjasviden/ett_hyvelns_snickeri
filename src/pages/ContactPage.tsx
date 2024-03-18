@@ -1,32 +1,39 @@
 import { Button, Form, Image } from "react-bootstrap";
+import useResponsiveView from "../hooks/useResponsiveView";
 
 const ContactPage = () => {
+  const isMobileView = useResponsiveView();
+
   return (
     <div className="contactPage">
       <h1>Kontakt</h1>
 
       <Form className="form">
-        <Form.Group className="mb-3 form-group" controlId="firstName">
-          <Form.Label>Förnamn</Form.Label>
-          <Form.Control type="text" />
-        </Form.Group>
+        <div className="first-last-name">
+          <Form.Group className="mb-3 form-group" controlId="firstName">
+            <Form.Label>Förnamn</Form.Label>
+            <Form.Control type="text" />
+          </Form.Group>
 
-        <Form.Group className="mb-3 form-group" controlId="lastName">
-          <Form.Label>Efternamn</Form.Label>
-          <Form.Control type="text" />
-        </Form.Group>
+          <Form.Group className="mb-3 form-group" controlId="lastName">
+            <Form.Label>Efternamn</Form.Label>
+            <Form.Control type="text" />
+          </Form.Group>
+        </div>
 
-        <Form.Group className="mb-3 form-group" controlId="email">
-          <Form.Label>E-post</Form.Label>
-          <Form.Control type="email" />
-        </Form.Group>
+        <div className="email-subject">
+          <Form.Group className="mb-3 form-group" controlId="email">
+            <Form.Label>E-post</Form.Label>
+            <Form.Control type="email" />
+          </Form.Group>
 
-        <Form.Group className="mb-3 form-group" controlId="subject">
-          <Form.Label>Ämne</Form.Label>
-          <Form.Control type="text" />
-        </Form.Group>
+          <Form.Group className="mb-3 form-group" controlId="subject">
+            <Form.Label>Ämne</Form.Label>
+            <Form.Control type="text" />
+          </Form.Group>
+        </div>
 
-        <Form.Group className="mb-3 form-group" controlId="message">
+        <Form.Group className="mb-3" controlId="message">
           <Form.Label>Meddelande</Form.Label>
           <Form.Control as="textarea" rows={3} />
         </Form.Group>
@@ -35,7 +42,11 @@ const ContactPage = () => {
       </Form>
 
       <div className="purple-blob">
-        <Image src="/images/contact-purple-blob.png" />
+        {isMobileView ? (
+          <Image src="/images/contact-purple-blob.png" />
+        ) : (
+          <Image src="/images/desktop-purple-blob.png" />
+        )}
 
         <div className="info-box">
           <div className="info address">
