@@ -1,0 +1,133 @@
+.aboutPage {
+  margin-bottom: 20px;
+
+  .about-mobile {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      font-family: "Kingred", sans-serif;
+      color: #7a4e4e;
+      width: 85%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    img {
+      width: 80%;
+    }
+  }
+  .desktop-view {
+    .about-img {
+      width: 30%;
+      position: absolute;
+      right: 7rem;
+      top: 2rem;
+    }
+
+    p {
+      font-family: "Kingred", sans-serif;
+      color: #7a4e4e;
+      width: 40%;
+      margin-left: 10rem;
+      text-align: left;
+      position: absolute;
+    }
+
+    .bottom-blobs {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+
+      img {
+        object-fit: contain;
+      }
+
+      .green {
+        width: 10%;
+      }
+
+      .purple {
+        display: none;
+      }
+
+      .blue {
+        width: 12%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  .aboutPage {
+    h1 {
+      margin-left: 40px;
+    }
+    .about-mobile {
+      img {
+        width: 70%;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .aboutPage {
+    h1 {
+      margin-left: 7rem;
+      margin-top: 3rem;
+    }
+    .desktop-view {
+      p {
+        margin-left: 7rem;
+      }
+      .about-img {
+        width: 40%;
+        right: 2rem;
+        top: 6rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .aboutPage {
+    .desktop-view {
+      .about-img {
+        width: 40%;
+        right: 2rem;
+        top: 4rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .aboutPage {
+    h1 {
+      margin-left: 9rem;
+    }
+    .desktop-view {
+      p {
+        margin-left: 9rem;
+      }
+      .about-img {
+        width: 30%;
+        right: 7rem;
+        top: 2rem;
+      }
+
+      .bottom-blobs {
+        .purple {
+          width: 40%;
+          display: block !important;
+        }
+      }
+    }
+  }
+}

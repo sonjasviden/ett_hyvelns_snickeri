@@ -8,38 +8,49 @@ const ContactPage = () => {
     <div className="contactPage">
       <h1>Kontakt</h1>
 
-      <Form className="form">
-        <div className="first-last-name">
-          <Form.Group className="mb-3 form-group" controlId="firstName">
-            <Form.Label>Förnamn</Form.Label>
-            <Form.Control type="text" />
+      <div className="desktop-flex">
+        <Form className="form">
+          <div className="first-last-name">
+            <Form.Group className="mb-3 form-group" controlId="firstName">
+              <Form.Label>Förnamn</Form.Label>
+              <Form.Control type="text" />
+            </Form.Group>
+
+            <Form.Group className="mb-3 form-group" controlId="lastName">
+              <Form.Label>Efternamn</Form.Label>
+              <Form.Control type="text" />
+            </Form.Group>
+          </div>
+
+          <div className="email-subject">
+            <Form.Group className="mb-3 form-group" controlId="email">
+              <Form.Label>E-post</Form.Label>
+              <Form.Control type="email" />
+            </Form.Group>
+
+            <Form.Group className="mb-3 form-group" controlId="subject">
+              <Form.Label>Ämne</Form.Label>
+              <Form.Control type="text" />
+            </Form.Group>
+          </div>
+
+          <Form.Group className="mb-3" controlId="message">
+            <Form.Label>Meddelande</Form.Label>
+            <Form.Control as="textarea" rows={3} />
           </Form.Group>
 
-          <Form.Group className="mb-3 form-group" controlId="lastName">
-            <Form.Label>Efternamn</Form.Label>
-            <Form.Control type="text" />
-          </Form.Group>
+          <Button>Skicka</Button>
+        </Form>
+
+        <div className="custom-order">
+          <h4>Vill du göra en beställning?</h4>
+          <p>
+            Vid intresse av att lägga en beställning på en produkt eller ett
+            projekt, stor som liten, hör av dig via kontaktformuläret bredvid
+            med ämnet "Beställning". Vi återkopplar så fort vi kan!
+          </p>
         </div>
-
-        <div className="email-subject">
-          <Form.Group className="mb-3 form-group" controlId="email">
-            <Form.Label>E-post</Form.Label>
-            <Form.Control type="email" />
-          </Form.Group>
-
-          <Form.Group className="mb-3 form-group" controlId="subject">
-            <Form.Label>Ämne</Form.Label>
-            <Form.Control type="text" />
-          </Form.Group>
-        </div>
-
-        <Form.Group className="mb-3" controlId="message">
-          <Form.Label>Meddelande</Form.Label>
-          <Form.Control as="textarea" rows={3} />
-        </Form.Group>
-
-        <Button>Skicka</Button>
-      </Form>
+      </div>
 
       <div className="purple-blob">
         {isMobileView ? (

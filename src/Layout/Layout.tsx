@@ -10,11 +10,9 @@ const Layout = () => {
 
   return (
     <>
-      <div>
-        {!isHomePage ? <Navigation /> : <HomeNavbar />}
-        <Outlet />
-        <Footer />
-      </div>
+      {!isHomePage ? <Navigation /> : <HomeNavbar />}
+      <Outlet />
+      <Footer />
     </>
   );
 };
