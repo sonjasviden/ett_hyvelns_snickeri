@@ -5,6 +5,9 @@ import HomePage from "./pages/HomePage";
 import GalleryPage from "./pages/GalleryPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import AdminGalleryPage from "./pages/AdminGalleryPage";
+import Login from "./components/Login";
 
 const App = () => {
   return (
@@ -17,14 +20,11 @@ const App = () => {
             <Route path="/kontakt" element={<ContactPage />} />
             <Route path="/om-oss" element={<AboutPage />} />
 
-            {/* <Route path="/admin-only/*" element={<ProtectedRoute />}>
-            <Route path="dashboard" element={<AdminPage />} />
-            <Route path="edit-gallery" element={<EditGallery />} />
-            <Route path="orders" element={<OrdersPage />} />
-            <Route path="products" element={<ProductsPage />} />
-            <Route path="create-product" element={<CreateProductPage />} />
-            <Route path="products/:productId" element={<EditProduct />} />
-          </Route> */}
+            <Route path="/logga-in" element={<Login />} />
+
+            <Route path="/admin/*" element={<ProtectedRoute />}>
+              <Route path="admin-galleri" element={<AdminGalleryPage />} />
+            </Route>
 
             {/* <Route path="*" element={<NotFound />} /> */}
           </Route>

@@ -4,6 +4,8 @@
 @import "./HomePage.scss";
 @import "./ContactPage.scss";
 @import "./AboutPage.scss";
+@import "./GalleryPage.scss";
+@import "./AdminGallery.scss";
 
 @font-face {
   font-family: "Kingred";
@@ -26,6 +28,30 @@ h1 {
   // margin-left: 20px;
   text-transform: uppercase;
   margin: 3rem 0 3rem 1.5rem;
+}
+
+.loading-spinner {
+  margin: 100px 0;
+  span {
+    margin: 0 auto;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffce3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7a4e4e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5b3a3a;
 }
 
 @media only screen and (min-width: 768px) {
