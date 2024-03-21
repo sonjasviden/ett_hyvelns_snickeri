@@ -1,5 +1,4 @@
 import { Container, Image as Img } from "react-bootstrap";
-import useResponsiveView from "../hooks/useResponsiveView";
 import { Gallery, Image } from "react-grid-gallery";
 import useGetCollection from "../hooks/useGetCollection";
 import { GalleryImage } from "../interfaces/index.interface";
@@ -7,8 +6,6 @@ import { galleryCol } from "../services/firebase";
 import { MoonLoader } from "react-spinners";
 
 const GalleryPage = () => {
-  const isMobileView = useResponsiveView();
-
   const { data: galleryData, isLoading } =
     useGetCollection<GalleryImage>(galleryCol);
 

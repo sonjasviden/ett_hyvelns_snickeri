@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Col, Container, Image } from "react-bootstrap";
+import { Col, Image } from "react-bootstrap";
 import { deleteDoc, doc } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage";
 import { MoonLoader } from "react-spinners";
@@ -29,7 +29,7 @@ const AdminGalleryPage = () => {
     }
   }, [galleryData]);
 
-  const deleteImage = async (imageId: string, imageName: string) => {
+  const deleteImage = async (imageName: string) => {
     try {
       const storageRef = ref(storage, `gallery/${imageName}`);
       await deleteObject(storageRef);
@@ -44,7 +44,7 @@ const AdminGalleryPage = () => {
   const handleDeleteImage = async (image: GalleryImage) => {
     try {
       setIsDeleting(true);
-      await deleteImage(image.id, image.name);
+      await deleteImage(image.name);
       await getData();
       setIsLoading(false);
       setMessage("Bild raderad!");
