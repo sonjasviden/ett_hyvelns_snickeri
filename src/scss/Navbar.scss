@@ -17,6 +17,7 @@
 
   .navbar-collapse {
     justify-content: center;
+    margin-bottom: 2rem;
 
     .mobile-nav {
       flex-direction: row;
@@ -103,6 +104,8 @@
 @media only screen and (min-width: 768px) {
   .navbar {
     .navbar-collapse {
+      margin-bottom: 0rem;
+
       .nav-link {
         &::after {
           background-color: #fffacd;
