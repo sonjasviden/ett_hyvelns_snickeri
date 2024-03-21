@@ -4,8 +4,11 @@ import useGetCollection from "../hooks/useGetCollection";
 import { GalleryImage } from "../interfaces/index.interface";
 import { galleryCol } from "../services/firebase";
 import { MoonLoader } from "react-spinners";
+import useResponsiveView from "../hooks/useResponsiveView";
 
 const GalleryPage = () => {
+  const isMobileView = useResponsiveView();
+
   const { data: galleryData, isLoading } =
     useGetCollection<GalleryImage>(galleryCol);
 
@@ -37,8 +40,8 @@ const GalleryPage = () => {
           <Gallery
             images={photos}
             enableImageSelection={false}
-            rowHeight={500}
-            margin={10}
+            rowHeight={isMobileView ? 300 : 500}
+            margin={isMobileView ? 5 : 10}
           />
         </div>
       </Container>
