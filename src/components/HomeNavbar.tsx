@@ -74,6 +74,11 @@ const HomeNavbar = () => {
               Om oss
             </Nav.Link>
           </Nav>
+          {isMobileView && (
+            <div className="footer">
+              <p>© Ett Hyvelns Snickeri AB</p>
+            </div>
+          )}
         </Navbar.Collapse>
       </Navbar>
     </div>

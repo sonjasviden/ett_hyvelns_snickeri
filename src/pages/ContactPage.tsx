@@ -1,6 +1,7 @@
 import { Button, Form, Image } from "react-bootstrap";
 import useResponsiveView from "../hooks/useResponsiveView";
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 const ContactPage = () => {
   const isMobileView = useResponsiveView();
@@ -125,6 +126,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

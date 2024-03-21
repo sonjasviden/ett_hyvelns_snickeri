@@ -26,6 +26,16 @@
 
       .nav-link {
         color: #7a4e4e;
+        margin-bottom: 5px;
+      }
+    }
+
+    .footer {
+      p {
+        position: relative;
+        text-align: center;
+        margin: 0;
+        font-size: 13px;
       }
     }
 
@@ -43,7 +53,7 @@
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: #fffacd;
+        background-color: #7a4e4e;
         transform: scaleX(0);
         transform-origin: bottom left;
         transition: transform 0.5s ease-in-out;
@@ -82,9 +92,22 @@
     margin: 10px;
     margin-left: 10px;
     margin-top: 20px;
+    cursor: pointer;
 
     img {
       width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar {
+    .navbar-collapse {
+      .nav-link {
+        &::after {
+          background-color: #fffacd;
+        }
+      }
     }
   }
 }
