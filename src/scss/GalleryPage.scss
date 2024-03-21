@@ -42,17 +42,29 @@
 
 @media only screen and (min-width: 400px) {
   .galleryPage {
-    h1 {
-      margin: 1rem 0 3rem 2rem !important;
-    }
+    // h1 {
+    //   margin: 1rem 0 1rem 2rem !important;
+    // }
     .gallery-bg {
       width: 40%;
     }
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .galleryPage {
+    .container {
+      height: 400px;
+    }
+  }
+}
+
 @media only screen and (min-width: 795px) {
   .galleryPage {
+    .container {
+      height: 450px;
+    }
+
     .gallery-bg {
       width: 30%;
     }
