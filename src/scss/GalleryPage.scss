@@ -11,10 +11,15 @@
     }
   }
 
+  h1 {
+    margin: 1rem 0px 1rem 2rem !important;
+  }
+
   .gallery-bg {
     width: 30%;
     bottom: 0;
     position: fixed;
+    z-index: -1;
 
     img {
       width: 100%;
@@ -29,9 +34,6 @@
 
 @media only screen and (min-width: 375px) {
   .galleryPage {
-    h1 {
-      margin: 1rem 0 3rem 2rem !important;
-    }
     .gallery-bg {
       width: 85%;
     }
