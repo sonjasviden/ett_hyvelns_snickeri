@@ -1,6 +1,6 @@
 import React, { useRef, useState, ChangeEvent } from "react";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { storage } from "../firebase/firebase";
+import { storage } from "../services/firebase";
 import { Image } from "../interfaces/index.interface";
 
 interface ImageUploadProp {

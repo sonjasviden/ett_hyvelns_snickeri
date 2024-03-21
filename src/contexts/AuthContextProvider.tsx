@@ -9,7 +9,7 @@ import {
   updateEmail as firebaseUpdateEmail,
   updatePassword as firebaseUpdatePassword,
 } from "firebase/auth";
-import { auth } from "../firebase/firebase";
+import { auth } from "../services/firebase";
 
 type AuthContextType = {
   currentUser: User | null;

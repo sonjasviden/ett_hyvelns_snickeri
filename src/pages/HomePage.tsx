@@ -9,7 +9,7 @@ const HomePage = () => {
       {isMobileView ? (
         <>
           <div className="homepage-logo">
-            <Image src="public/images/logo.png" />
+            <Image src="/images/logo.png" />
           </div>
 
           <p>
@@ -47,7 +47,7 @@ const HomePage = () => {
               <Image src="/images/orange-blob.png" />
             </div>
             <div className="blue">
-              <Image src="public/images/blue-blob.png" />
+              <Image src="/images/blue-blob.png" />
             </div>
           </div>
         </>

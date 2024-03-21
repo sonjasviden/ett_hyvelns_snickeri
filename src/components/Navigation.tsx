@@ -8,7 +8,12 @@ import { useState } from "react";
 const Navigation = () => {
   const isMobileView = useResponsiveView();
   const [open, setOpen] = useState(false);
-  const toggle = () => setOpen(!open);
+
+  const toggle = () => {
+    if (isMobileView) {
+      setOpen(!open);
+    }
+  };
 
   return (
     <>
@@ -29,7 +34,7 @@ const Navigation = () => {
             />
           </div>
 
-          <Navbar.Collapse in={open} id="basic-navbar-nav">
+          <Navbar.Collapse in={open || !isMobileView} id="basic-navbar-nav">
             <Nav className={isMobileView ? "mobile-nav" : ""}>
               <Nav.Link
                 onClick={toggle}

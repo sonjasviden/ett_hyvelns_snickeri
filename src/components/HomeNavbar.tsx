@@ -8,8 +8,11 @@ const HomeNavbar = () => {
   const [open, setOpen] = useState(false);
   const isMobileView = useResponsiveView();
 
-  const toggle = () => setOpen(!open);
-
+  const toggle = () => {
+    if (isMobileView) {
+      setOpen(!open);
+    }
+  };
   return (
     <div>
       <Navbar expand="md">

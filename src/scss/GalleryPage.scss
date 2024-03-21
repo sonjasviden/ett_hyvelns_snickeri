@@ -1,7 +1,18 @@
 .galleryPage {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   .gallery-bg {
     width: 30%;
-    // top: 15rem;
     bottom: 0;
     position: fixed;
 
@@ -48,11 +59,7 @@
       margin: 6rem 0 3rem 8rem !important;
       position: absolute;
       right: 4rem;
-      top: 1rem;
-    }
-
-    .container {
-      padding-top: 20px;
+      top: -2rem;
     }
   }
 }
@@ -61,7 +68,6 @@
   .galleryPage {
     .gallery-bg {
       width: 25%;
-      // top: 15rem;
 
       img {
         width: 100%;

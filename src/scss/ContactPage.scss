@@ -1,4 +1,16 @@
 .contactPage {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   .desktop-flex {
     .custom-order {
       display: none;
@@ -215,6 +227,8 @@
       }
     }
     .purple-blob {
+      margin-top: -10rem;
+
       img {
         width: 40%;
       }

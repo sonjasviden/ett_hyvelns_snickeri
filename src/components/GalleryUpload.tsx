@@ -3,7 +3,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { MoonLoader } from "react-spinners";
 import { GalleryImage } from "../interfaces/index.interface";
-import { db, storage } from "../firebase/firebase";
+import { db, storage } from "../services/firebase";
 
 interface ImageUploadProp {
   setImages: React.Dispatch<React.SetStateAction<GalleryImage[]>>;

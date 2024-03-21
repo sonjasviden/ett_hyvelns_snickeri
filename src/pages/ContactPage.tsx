@@ -1,45 +1,93 @@
 import { Button, Form, Image } from "react-bootstrap";
 import useResponsiveView from "../hooks/useResponsiveView";
+import { useState } from "react";
 
 const ContactPage = () => {
   const isMobileView = useResponsiveView();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("firstName", firstName);
+    formData.append("lastName", lastName);
+    formData.append("email", email);
+    formData.append("subject", subject);
+    formData.append("message", message);
+
+    try {
+      const response = await fetch("/send-email", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <div className="contactPage">
       <h1>Kontakt</h1>
 
       <div className="desktop-flex">
-        <Form className="form">
+        <Form className="form" onSubmit={handleSubmit}>
           <div className="first-last-name">
             <Form.Group className="mb-3 form-group" controlId="firstName">
               <Form.Label>Förnamn</Form.Label>
-              <Form.Control type="text" />
+              <Form.Control
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3 form-group" controlId="lastName">
               <Form.Label>Efternamn</Form.Label>
-              <Form.Control type="text" />
+              <Form.Control
+                type="text"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
             </Form.Group>
           </div>
 
           <div className="email-subject">
             <Form.Group className="mb-3 form-group" controlId="email">
               <Form.Label>E-post</Form.Label>
-              <Form.Control type="email" />
+              <Form.Control
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3 form-group" controlId="subject">
               <Form.Label>Ämne</Form.Label>
-              <Form.Control type="text" />
+              <Form.Control
+                type="text"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+              />
             </Form.Group>
           </div>
 
           <Form.Group className="mb-3" controlId="message">
             <Form.Label>Meddelande</Form.Label>
-            <Form.Control as="textarea" rows={3} />
+            <Form.Control
+              as="textarea"
+              rows={3}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
           </Form.Group>
 
-          <Button>Skicka</Button>
+          <Button type="submit">Skicka</Button>
         </Form>
 
         <div className="custom-order">

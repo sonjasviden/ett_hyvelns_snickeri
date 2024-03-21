@@ -3,7 +3,7 @@ import useResponsiveView from "../hooks/useResponsiveView";
 import { Gallery, Image } from "react-grid-gallery";
 import useGetCollection from "../hooks/useGetCollection";
 import { GalleryImage } from "../interfaces/index.interface";
-import { galleryCol } from "../firebase/firebase";
+import { galleryCol } from "../services/firebase";
 import { MoonLoader } from "react-spinners";
 
 const GalleryPage = () => {
@@ -27,7 +27,7 @@ const GalleryPage = () => {
       <h1>Galleri</h1>
       {isLoading && (
         <div className="loading-spinner">
-          <MoonLoader color="#6c8c97" />
+          <MoonLoader color="#fd7f32" />
         </div>
       )}
 

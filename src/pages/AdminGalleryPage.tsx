@@ -5,7 +5,7 @@ import { deleteObject, ref } from "firebase/storage";
 import { MoonLoader } from "react-spinners";
 import useGetCollection from "../hooks/useGetCollection";
 import { GalleryImage } from "../interfaces/index.interface";
-import { db, galleryCol, storage } from "../firebase/firebase";
+import { db, galleryCol, storage } from "../services/firebase";
 import GalleryUpload from "../components/GalleryUpload";
 import Logout from "../components/Logout";
 

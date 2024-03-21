@@ -19,6 +19,17 @@
 
 body {
   background-color: #fffacd;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 h1 {
@@ -47,11 +58,11 @@ h1 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7a4e4e;
+  background: #fd7f32;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5b3a3a;
+  background: #ffbd59;
 }
 
 @media only screen and (min-width: 768px) {
