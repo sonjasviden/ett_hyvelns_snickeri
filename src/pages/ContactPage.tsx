@@ -23,10 +23,10 @@ const ContactPage = () => {
       axios.post(
         "https://formsubmit.co/ajax/c86343f26c1594f85fe68065d228ac2e",
         {
-          name: `${firstName} ${lastName}`,
-          email: email,
-          subject: subject,
-          message: message,
+          Namn: `${firstName} ${lastName}`,
+          Email: email,
+          Ämne: subject,
+          Meddelande: message,
         }
       );
       setTimeout(() => {
@@ -66,15 +66,11 @@ const ContactPage = () => {
                     type="text"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    name="Förnamn"
+                    required
                   />
                 </Form.Group>
 
-                <input
-                  type="hidden"
-                  name="_next"
-                  value="http://localhost:5173/"
-                />
+                <input type="hidden" name="_subject" value="Nytt meddelande!" />
 
                 <Form.Group className="mb-3 form-group" controlId="lastName">
                   <Form.Label>Efternamn</Form.Label>
@@ -82,7 +78,7 @@ const ContactPage = () => {
                     type="text"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    name="Efternamn"
+                    required
                   />
                 </Form.Group>
               </div>
@@ -94,7 +90,8 @@ const ContactPage = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    name="Email"
+                    name="email"
+                    required
                   />
                 </Form.Group>
 
@@ -104,7 +101,7 @@ const ContactPage = () => {
                     type="text"
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
-                    name="Ämne"
+                    name="subject"
                   />
                 </Form.Group>
               </div>
@@ -116,7 +113,8 @@ const ContactPage = () => {
                   rows={3}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  name="Meddelande"
+                  name="message"
+                  required
                 />
               </Form.Group>
 
