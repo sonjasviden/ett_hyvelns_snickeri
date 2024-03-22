@@ -50,7 +50,7 @@
 
     .info-box {
       position: absolute;
-      bottom: 0;
+      bottom: 1rem;
 
       .phoneNr {
         margin-bottom: 20px !important;
@@ -93,6 +93,7 @@
   .contactPage {
     .purple-blob {
       .info-box {
+        bottom: 2rem;
         .phoneNr {
           margin-bottom: 35px !important;
         }
@@ -140,7 +141,7 @@
 
     .purple-blob {
       img {
-        width: 85%;
+        width: 80%;
       }
 
       .info-box {
@@ -156,7 +157,7 @@
   .contactPage {
     .purple-blob {
       img {
-        width: 70%;
+        width: 60%;
       }
 
       .info-box {
