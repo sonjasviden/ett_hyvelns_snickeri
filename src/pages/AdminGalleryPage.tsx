@@ -64,22 +64,24 @@ const AdminGalleryPage = () => {
 
   return (
     <div className="editGallery-view">
-      <Logout />
-      <h1>Hantera galleriet</h1>
-      {isDeleting ? (
-        <div className="delete-image-indicator">
-          <p>Raderar bild...</p>
-          <MoonLoader color="#000000" size={18} />
-        </div>
-      ) : (
-        <>
-          {message && (
-            <div className="delete-image-indicator">
-              <p>Bild raderad!</p>
-            </div>
-          )}
-        </>
-      )}
+      <Col className="col-logout-heading">
+        <Logout />
+        <h1>Hantera galleriet</h1>
+        {isDeleting ? (
+          <div className="delete-image-indicator">
+            <p>Raderar bild...</p>
+            <MoonLoader color="#000000" size={18} />
+          </div>
+        ) : (
+          <>
+            {message && (
+              <div className="delete-image-indicator">
+                <p>Bild raderad!</p>
+              </div>
+            )}
+          </>
+        )}
+      </Col>
 
       <Col>
         {isLoading && (

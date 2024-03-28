@@ -1,32 +1,6 @@
 .editGallery-view {
   margin-bottom: 3rem;
 
-  .btn {
-    margin-left: 24px;
-    color: #7a4e4e;
-    border: #7a4e4e 1px solid;
-    font-family: "Kingred", sans-serif;
-  }
-
-  h1 {
-    margin-top: 2rem;
-  }
-
-  .delete-image-indicator {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-
-    p {
-      margin-right: 10px;
-      margin-bottom: 0;
-      font-family: "Kingred", sans-serif;
-      font-size: 22px;
-      color: #7a4e4e;
-    }
-  }
-
   .col {
     display: flex;
     flex-wrap: wrap;
@@ -57,6 +31,41 @@
     }
   }
 
+  .col-logout-heading {
+    display: block;
+    background-color: transparent;
+    overflow: auto;
+    padding: 0;
+
+    .btn {
+      color: #7a4e4e;
+      border: #7a4e4e 1px solid;
+      font-family: "Kingred", sans-serif;
+    }
+
+    h1 {
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      font-size: 20px;
+      margin-left: 0;
+    }
+
+    .delete-image-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+
+      p {
+        margin-right: 10px;
+        margin-bottom: 0;
+        font-family: "Kingred", sans-serif;
+        font-size: 22px;
+        color: #7a4e4e;
+      }
+    }
+  }
+
   .upload-btn {
     margin: 20px;
     button {
@@ -69,6 +78,16 @@
       padding: 15px 20px 10px 20px;
       border: none;
       color: #fffacd;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .editGallery-view {
+    .col-logout-heading {
+      h1 {
+        font-size: 30px;
+      }
     }
   }
 }
