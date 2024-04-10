@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { LoginCredentials } from "../interfaces/index.interface";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { login, currentUser } = useAuth();
@@ -23,6 +25,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     if (currentUser) {
@@ -36,7 +39,9 @@ const Login = () => {
       await login(data.email, data.password);
     } catch (error) {
       console.error("Login failed. Please check your credentials.");
-      setError("Inloggning misslyckades. Endast admin kan logga in.");
+      setError(
+        "Inloggning misslyckades. Kolla att du skrivit in rätt lösenord och e-post."
+      );
     }
     setLoading(false);
   };
@@ -73,12 +78,20 @@ const Login = () => {
                     className="formgroup"
                   >
                     <Form.Label>Lösenord</Form.Label>
-                    <Form.Control
-                      type="password"
-                      {...register("password", {
-                        required: "Skriv in lösenord",
-                      })}
-                    />
+                    <div className="password-flex">
+                      <Form.Control
+                        type={showPassword === false ? "password" : "text"}
+                        {...register("password", {
+                          required: "Skriv in lösenord",
+                        })}
+                      />
+                      {showPassword === false ? (
+                        <FaEye onClick={() => setShowPassword(true)} />
+                      ) : (
+                        <FaEyeSlash onClick={() => setShowPassword(false)} />
+                      )}
+                    </div>
+
                     {errors.password && (
                       <Alert variant="danger">{errors.password.message}</Alert>
                     )}

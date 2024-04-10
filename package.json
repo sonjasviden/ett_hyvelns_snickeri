@@ -12,10 +12,12 @@
     "deploy": "netlify deploy --prod"
   },
   "dependencies": {
+    "@hello-pangea/dnd": "^16.6.0",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "firebase": "^10.9.0",
     "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
     "react-grid-gallery": "^1.0.1-alpha.0",
@@ -28,6 +30,7 @@
   "devDependencies": {
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.64",
+    "@types/react-beautiful-dnd": "^13.1.8",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",

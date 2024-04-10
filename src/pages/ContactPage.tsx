@@ -60,7 +60,10 @@ const ContactPage = () => {
           <div className="desktop-flex">
             <Form className="form" method="POST" onSubmit={handleSubmit}>
               <div className="first-last-name">
-                <Form.Group className="mb-3 form-group" controlId="firstName">
+                <Form.Group
+                  className="mb-3 form-group firstName"
+                  controlId="firstName"
+                >
                   <Form.Label>Förnamn</Form.Label>
                   <Form.Control
                     type="text"
@@ -84,7 +87,7 @@ const ContactPage = () => {
               </div>
 
               <div className="email-subject">
-                <Form.Group className="mb-3 form-group" controlId="email">
+                <Form.Group className="mb-3 form-group email" controlId="email">
                   <Form.Label>E-post</Form.Label>
                   <Form.Control
                     type="email"

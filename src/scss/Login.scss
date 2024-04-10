@@ -2,6 +2,7 @@
   .container {
     .card {
       border: none;
+      margin: 0 20px;
       .card-body {
         .card-title {
           color: #7a4e4e;
@@ -15,6 +16,16 @@
           color: #7a4e4e;
           font-family: "Kingred", sans-serif;
 
+          .password-flex {
+            display: flex;
+            align-items: center;
+
+            svg {
+              margin-left: -40px;
+              font-size: 25px;
+            }
+          }
+
           .form-control {
             border: #7a4e4e 1px solid;
             border-radius: 10px;
@@ -26,6 +37,11 @@
           border: #7a4e4e 1px solid;
           font-family: "Kingred", sans-serif;
           margin-top: 2rem !important;
+
+          &:hover {
+            background-color: #7a4e4e;
+            color: white;
+          }
         }
       }
     }

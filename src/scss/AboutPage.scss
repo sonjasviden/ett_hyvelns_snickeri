@@ -3,6 +3,25 @@
   opacity: 0;
   animation: fadeIn 0.5s ease-in forwards;
 
+  h1 {
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+
+  .btn {
+    background-color: #fd7f32;
+    font-family: "Tan Meringue", sans-serif;
+    text-transform: uppercase;
+    padding: 15px 20px 10px 20px;
+    border: none;
+    color: #fffacd;
+    margin-top: 1.5rem;
+
+    &:hover {
+      background-color: #e86e22;
+    }
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -54,6 +73,7 @@
       width: 100%;
       position: absolute;
       bottom: 0;
+      z-index: -1;
 
       img {
         object-fit: contain;

@@ -65,6 +65,10 @@
       padding: 15px 20px 10px 20px;
       border: none;
       color: #fffacd;
+
+      &:hover {
+        background-color: #e86e22;
+      }
     }
   }
 
@@ -252,8 +256,14 @@
     .desktop-flex {
       display: flex;
 
+      .firstName,
+      .email {
+        margin-right: 15px;
+      }
+
       .custom-order {
         display: block;
+        margin-right: 20px;
 
         width: 40%;
         margin-left: 30px;

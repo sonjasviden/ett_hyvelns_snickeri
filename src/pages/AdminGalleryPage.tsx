@@ -8,13 +8,20 @@ import { GalleryImage } from "../interfaces/index.interface";
 import { db, galleryCol, storage } from "../services/firebase";
 import GalleryUpload from "../components/GalleryUpload";
 import Logout from "../components/Logout";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
+
+const reorder = (list: any[], startIndex: number, endIndex: number): any[] => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+  return result;
+};
 
 const AdminGalleryPage = () => {
   const [images, setImages] = useState<GalleryImage[]>([]);
   const [message, setMessage] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-
-  console.log("images", images);
+  const [items, setItems] = useState(images);
 
   const {
     data: galleryData,
@@ -23,9 +30,24 @@ const AdminGalleryPage = () => {
     setIsLoading,
   } = useGetCollection<GalleryImage>(galleryCol);
 
+  const onDragEnd = (result: any) => {
+    if (!result.destination) {
+      return;
+    }
+
+    const newItems = reorder(
+      items,
+      result.source.index,
+      result.destination.index
+    );
+
+    setItems(newItems);
+  };
+
   useEffect(() => {
     if (galleryData) {
       setImages(galleryData);
+      setItems(galleryData);
     }
   }, [galleryData]);
 
@@ -83,23 +105,43 @@ const AdminGalleryPage = () => {
         )}
       </Col>
 
-      <Col>
-        {isLoading && (
-          <div className="loading-spinner">
-            <MoonLoader color="#6c8c97" />
-          </div>
-        )}
-        {images.map((image) => (
-          <div key={image.id} className="image-box">
-            <Image
-              onClick={() => handleDeleteImage(image)}
-              className="deleteIcon"
-              src="/images/deleteIcon-gallery.png"
-            />
-            <Image className="gallery-img" src={image.imageUrl} />
-          </div>
-        ))}
-      </Col>
+      {isLoading && (
+        <div className="loading-spinner">
+          <MoonLoader color="#6c8c97" />
+        </div>
+      )}
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Droppable
+          droppableId="galleryDroppable"
+          direction="horizontal"
+          isCombineEnabled
+        >
+          {(provided) => (
+            <Col {...provided.droppableProps} ref={provided.innerRef}>
+              {items.map((image, index) => (
+                <Draggable key={image.id} draggableId={image.id} index={index}>
+                  {(provided) => (
+                    <div
+                      className="image-box"
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                    >
+                      <Image
+                        onClick={() => handleDeleteImage(image)}
+                        className="deleteIcon"
+                        src="/images/deleteIcon-gallery.png"
+                      />
+                      <Image className="gallery-img" src={image.imageUrl} />
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </Col>
+          )}
+        </Droppable>
+      </DragDropContext>
 
       <GalleryUpload
         setImages={setImages}

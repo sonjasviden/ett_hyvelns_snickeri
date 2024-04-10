@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="footer-box">
       {!isMobileView && (
         <div className="footer">
-          <p>© Ett Hyvelns Snickeri AB</p>
+          <p>© {new Date().getFullYear()} Ett Hyvelns Snickeri AB</p>
         </div>
       )}
     </div>
