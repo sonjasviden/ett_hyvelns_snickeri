@@ -8,6 +8,7 @@ import AboutPage from "./pages/AboutPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminGalleryPage from "./pages/AdminGalleryPage";
 import Login from "./components/Login";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -26,7 +27,7 @@ const App = () => {
               <Route path="admin-galleri" element={<AdminGalleryPage />} />
             </Route>
 
-            {/* <Route path="*" element={<NotFound />} /> */}
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

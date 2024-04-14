@@ -20,15 +20,12 @@ const ContactPage = () => {
 
     try {
       setIsLoading(true);
-      axios.post(
-        "https://formsubmit.co/ajax/c86343f26c1594f85fe68065d228ac2e",
-        {
-          Namn: `${firstName} ${lastName}`,
-          Email: email,
-          Ämne: subject,
-          Meddelande: message,
-        }
-      );
+      axios.post("https://formsubmit.co/el/topuwu", {
+        Namn: `${firstName} ${lastName}`,
+        Email: email,
+        Ämne: subject,
+        Meddelande: message,
+      });
       setTimeout(() => {
         console.log("success!");
         setShowThankYou(true);
@@ -41,7 +38,12 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="contactPage">
+    <div
+      className="contactPage"
+      style={
+        showThankYou && !isMobileView ? { marginLeft: "0 !important" } : {}
+      }
+    >
       {showThankYou ? (
         <div className="thankYou-page">
           <h1>Tack för ditt meddelande!</h1>
