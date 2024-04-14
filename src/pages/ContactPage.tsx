@@ -14,6 +14,7 @@ const ContactPage = () => {
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,9 +30,12 @@ const ContactPage = () => {
       setTimeout(() => {
         console.log("success!");
         setShowThankYou(true);
-      }, 4000);
+      }, 3000);
     } catch (error) {
       setIsLoading(false);
+      setErrorMessage(
+        "Ditt meddelande kunde tyvärr inte skickas. Försök igen senare!"
+      );
       console.log(error);
       setShowThankYou(false);
     }
@@ -122,7 +126,14 @@ const ContactPage = () => {
                   required
                 />
               </Form.Group>
-
+              {errorMessage && (
+                <p style={{ color: "#e43415", fontFamily: "Kingred" }}>
+                  {errorMessage}
+                </p>
+              )}
+              {/* <p style={{ color: "#e43415", fontFamily: "Kingred" }}>
+                Ditt meddelande kunde tyvärr inte skickas. Försök igen senare!
+              </p> */}
               <Button type="submit">
                 {isLoading ? "Skickar..." : "Skicka"}
               </Button>
