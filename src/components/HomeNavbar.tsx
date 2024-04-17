@@ -80,6 +80,12 @@ const HomeNavbar = () => {
             </div>
           )}
         </Navbar.Collapse>
+        <a
+          href="https://www.instagram.com/etthyvelnssnickeri.se/"
+          target="_blank"
+        >
+          <Image className="ig-icon" src="/images/instagram.png" />
+        </a>
       </Navbar>
     </div>
   );

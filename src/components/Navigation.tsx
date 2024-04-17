@@ -35,8 +35,15 @@ const Navigation = () => {
               aria-controls="basic-navbar-nav"
             />
           </div>
-
           <Navbar.Collapse in={open || !isMobileView} id="basic-navbar-nav">
+            <div className="instagram-div">
+              <a
+                href="https://www.instagram.com/etthyvelnssnickeri.se/"
+                target="_blank"
+              >
+                <Image className="ig-icon" src="/images/instagram.png" />
+              </a>
+            </div>
             <Nav className={isMobileView ? "mobile-nav" : ""}>
               <Nav.Link
                 onClick={toggle}

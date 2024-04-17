@@ -2,7 +2,21 @@
   padding-top: 0;
   align-items: start;
 
+  .instagram-div {
+    text-align: center;
+    margin-top: -4rem;
+    margin-bottom: -1rem;
+  }
+
+  .ig-icon {
+    width: 80px;
+    padding: 15px;
+    right: 0;
+    cursor: pointer;
+  }
+
   .toggler-box {
+    z-index: 999;
     .navbar-toggler {
       cursor: pointer;
       border: none;
@@ -10,7 +24,7 @@
       font-size: 50px;
       padding: 10px;
       color: #fffacd;
-      background-color: #fd7f32;
+      background-color: #ff7602;
       margin: 2rem;
     }
   }
@@ -94,7 +108,7 @@
     margin-left: 10px;
     margin-top: 20px;
     cursor: pointer;
-    z-index: 999;
+    z-index: 99999;
 
     img {
       width: 100%;
@@ -104,6 +118,12 @@
 
 @media only screen and (min-width: 768px) {
   .navbar {
+    .ig-icon {
+      width: 100px;
+      padding: 15px;
+      position: absolute;
+      right: 0;
+    }
     .navbar-collapse {
       margin-bottom: 0rem;
 
